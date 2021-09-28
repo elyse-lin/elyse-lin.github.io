@@ -9,3 +9,10 @@ body {
     padding: 0;
     overflow: hidden;
 }
+
+
+/*list items inside unordered lists with class nav*/
+
+ul.nav li {
+    float: left;
+}
