@@ -36,3 +36,10 @@ ul.nav li a:hover {
 .active {
     background-color: rgb(132, 139, 201);
 }
+
+
+/*This is my new feature: changing the font*/
+
+.timesnewroman {
+    font-family: 'Times New Roman', Times, serif
+}
