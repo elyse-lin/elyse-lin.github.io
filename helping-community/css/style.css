@@ -24,13 +24,13 @@ ul.nav li {
 ul.nav li a {
     display: block;
     padding: 8px 16px;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 ul.nav li a:hover {
-    background-color: rgb(67, 28, 83);
-    color: black;
+    background-color: rgb(84, 33, 104);
+    color: white;
 }
 
 .active {
