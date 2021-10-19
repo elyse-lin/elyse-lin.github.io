@@ -36,3 +36,7 @@ ul.nav li a:hover {
 .active {
     background-color: rgb(0, 119, 182);
 }
+
+.header {
+    text-align: center;
+}
