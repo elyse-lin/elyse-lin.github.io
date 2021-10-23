@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--I challenged myself again with the JS learning with background changes, and changing the format of the table borders. I also challenged myself by using everything we learned and adding more CSS stuff than what was required-->
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +8,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question & Answer</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .header {
+            text-align: center;
+        }
+        
+        #header {
+            text-shadow: 2px 2px 5px royalblue;
+        }
+        
+        .question {
+            text-indent: 1cm;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        
+        .answer {
+            text-indent: 1cm;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        
+        #contact th {
+            background-color: #04AA6D;
+            opacity: 0.8;
+        }
+        
+        #contact tr:hover {
+            background-color: #ddd;
+        }
+        
+        #contact tr {
+            background-color: white;
+        }
+        
+        #contact {
+            border-collapse: collapse;
+        }
+        
+        #contact {
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,8 +65,45 @@
         <li class="active">
             <a href="Q&A.html">Q & A</a></li>
     </ul>
+    <h2 id="header" style="text-indent: 1in;">Do you still have questions about sleep? Here are some answers to your frequently asked questions</h2>
+    <img src="images/Q&A.jpg">
+    <p class="question">Question: Do daytime naps affect my sleep?</p>
+    <p class="answer">Answer: If you are constantly taking naps, you could be sleep-deprived. But short naps can be a powerful way to improve performance and lessen fatigue, although long naps could interfere with sleeping at "regular" times and will break your cicadian
+        sleep rhythm.</p>
+    <p class="question">Question: Why do I dream?</p>
+    <p class="answer">Answer: Dream is present in all cycles of sleep, but is frequently associated with REM sleep in deep sleep. It is used to reinforce memories and brain activity.</p>
+    <p class="question">Question: What is the best sleep environment?</p>
+    <p class="answer">Answer: A dark, quiet, cool environment is optimal for sleep, a lower body temperature is associated with cicadian rhythm sleepiness.</p>
+    <p class="question">Question: Where can we find calming sleep music or guided meditation for sleep?</p>
+    <p class="answer">Answer: There is a Resources page with sleep music and guided meditation, there are also sleep music and guided meditation on youtube.</p>
+    <p class="question">Question: Why do I sometimes feel sleepy after I wake up?</p>
+    <p class="answer">Answer:This is just something called "sleep inertia", which is a normal part of the waking up process. Your brain transition into a wakeful state and shouldn't wake up immediately, which is why you might feel groggy or tired in this period.</p>
+    <p class="question">Question: What happens if I oversleep? How is it caused?</p>
+    <p class="answer">Answer: If you oversleep, then it can increase the risk of diabetes, heart disease, stroke and death. It is usually caused by undersleeping in the days following that day, but it can also be from the disease known as "hypersomnia". If you want more
+        information on hypersomnia or any other sleep diseases, check out our Resources page.</p>
+    <p class="question">Question: Why do I or my body sometimes just randomly falls asleep? Is this just me or a disease?</p>
+    <p class="answer">Answer: If you or your body just sometimes randomly falls asleep, you could be suffering from a chronic sleep disease like Narcolepsy. If you want more information about sleep diseases like Nacrolepsy or Restless Legs Syndrome, check out our Resources
+        page.
+    </p>
+    <p class="question">Question: How can we contact you if we have more questions?</p>
+    <p class="answer">Answer: Below is a table with the name of each member of the group that created the website, along with our contact information.</p>
+    <table id="contact" style="border:2px black solid" border="1px black">
+        <tr>
+            <th>Maria Picoto</th>
+            <th>Elyse Lin</th>
+            <th>Nathan Gong</th>
+        </tr>
+        <tr>
+            <td>mapicoto@eastsideprep.org</td>
+            <td>elin@eastsideprep.org</td>
+            <td>ngong@eastsideprep.org</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
     <div class="footer">
-        <p>made by Nathan</p>
+        <p>Made by Nathan</p>
     </div>
 </body>
 
