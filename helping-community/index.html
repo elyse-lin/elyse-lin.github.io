@@ -34,17 +34,21 @@
     <h3>First, here is a video on insomnia:</h3>
     <iframe class="center" width="560" height="315" src="https://www.youtube.com/embed/j5Sl8LyI7k8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <br>
+    <!---One new CSS feature: font change--->
+    <div class="newfont">
+        <h3>Are you ready to get good sleep?</h3>
+        <p id="good-sleep"></p>
+        <button onclick="document.getElementById('good-sleep').innerHTML='Great, poke around our website to learn more!';document.getElementById('secret').style.display='block'">Yes</button>
+        <button onclick="document.getElementById('good-sleep').innerHTML='Yay, good for you!';document.getElementById('secret').style.display='block'">I already get good sleep</button>
+    </div>
 
-    <h3>Are you ready to get good sleep?</h3>
-    <p id="good-sleep"></p>
-    <button onclick="document.getElementById('good-sleep').innerHTML='Great, poke around our website to learn more!';document.getElementById('secret').style.display='block'">Yes</button>
-    <button onclick="document.getElementById('good-sleep').innerHTML='Yay, good for you!';document.getElementById('secret').style.display='block'">I already get good sleep</button>
     <br>
     <br>
     <br>
     <br>
+    <!---NEW FEATURE FONT GLOW--->
     <table border="1">
-        <tr>
+        <tr class="glow">
             <th>Bad Sleep</th>
             <th>Regular Sleep</th>
             <th>Great Sleep</th>
