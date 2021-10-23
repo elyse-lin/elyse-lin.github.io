@@ -50,3 +50,8 @@ ul.nav li a:hover {
     color: white;
     text-align: center;
 }
+
+.large-purple {
+    color: purple;
+    font-size: x-large;
+}
