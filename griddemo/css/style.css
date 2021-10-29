@@ -76,3 +76,15 @@ ul.nav li a:hover {
     grid-column: 2;
     grid-row: 4;
 }
+
+.fbp {
+    font-family: freight-big-pro, serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.fdp {
+    font-family: freight-display-pro, serif;
+    font-weight: 700;
+    font-style: italic;
+}
