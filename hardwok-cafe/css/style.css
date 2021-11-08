@@ -28,7 +28,9 @@ li a:hover {
 
 .header {
     text-align: center;
-    font-size: xx-large;
+    font-size: 50px;
+    grid-column: 1/span 5;
+    grid-row: 1;
 }
 
 .font {
@@ -44,14 +46,14 @@ li a:hover {
 }
 
 .grid-item {
-    background-color: rgb(146, 23, 146);
-    text-align: left;
+    background-color: rgb(160, 23, 160);
+    text-align: center;
     font-size: 30px;
     padding: 8px 16px;
 }
 
 .navmenu {
-    grid-column: 1;
+    grid-column: 1/span 5;
     grid-row: 2/span 3;
 }
 
