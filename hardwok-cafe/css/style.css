@@ -1,0 +1,61 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(76, 160, 76);
+    color: black;
+}
+
+.active {
+    background-color: orange;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.font {
+    font-family: epicursive, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: rgb(146, 23, 146);
+    text-align: left;
+    font-size: 30px;
+    padding: 8px 16px;
+}
+
+.navmenu {
+    grid-column: 1;
+    grid-row: 2/span 3;
+}
+
+.logo {
+    grid-column: 1;
+    grid-row: 1;
+}
