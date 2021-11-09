@@ -28,7 +28,7 @@ li a:hover {
 
 .header {
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
     grid-column: 1/span 5;
     grid-row: 1;
 }
@@ -46,13 +46,20 @@ li a:hover {
 }
 
 .grid-item {
+    background-color: rgb(168, 88, 168);
+    text-align: center;
+    font-size: 30px;
+    padding: 8px 16px;
+}
+
+.grid-item2 {
     text-align: center;
     font-size: 30px;
     padding: 8px 16px;
 }
 
 .navmenu {
-    grid-column: 1/span 5;
+    grid-column: 1/span 2;
     grid-row: 2/span 3;
 }
 
@@ -69,7 +76,7 @@ li a:hover {
 /* Slideshow container */
 
 .slideshow-container {
-    max-width: 75%;
+    max-width: 70%;
     position: relative;
     margin: auto;
     grid-column: 3/ span 2;
