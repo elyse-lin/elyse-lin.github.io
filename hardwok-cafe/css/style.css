@@ -41,7 +41,7 @@ li a:hover {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto 40% 20% 20%;
+    grid-template-columns: auto 30% 30% 20%;
     grid-gap: 10px;
     padding: 10px;
 }
@@ -64,6 +64,11 @@ li a:hover {
     grid-row: 2/auto;
 }
 
+.navmenu-menu {
+    grid-column: 1/span 2;
+    grid-row: 2/span 2;
+}
+
 .logo {
     grid-column: 1;
     grid-row: 1;
@@ -78,9 +83,47 @@ li a:hover {
     grid-row: 5;
 }
 
-.main2 {
-    grid-column: 4;
+.image1 {
+    grid-column: 1/span 4;
+    grid-row: 6;
+    position: center;
+}
+
+.image2 {
+    grid-column: 3/span 2;
+    grid-row: 6;
+}
+
+.address-text {
+    grid-column: 2/span 3;
+    grid-row: 2;
+    text-align: center;
+    position: center;
+}
+
+.menu {
+    grid-column: 2/span 3;
+    grid-row: 2;
+    text-align: center;
+    position: center;
+}
+
+.menu-snack {
+    grid-column: 2;
     grid-row: 3;
+    text-align: center;
+    position: center;
+}
+
+.menu-appetizer {
+    grid-column: 3/span 2;
+    grid-row: 3;
+    text-align: center;
+    position: center;
+}
+
+.boxed {
+    border: 3px solid black;
 }
 
 
