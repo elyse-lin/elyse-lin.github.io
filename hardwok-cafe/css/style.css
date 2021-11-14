@@ -140,6 +140,13 @@ li a:hover {
     border: 3px solid black;
 }
 
+.hours {
+    grid-column: 2/span 3;
+    grid-row: 2;
+    text-align: center;
+    position: center;
+}
+
 
 /* Slideshow container */
 
