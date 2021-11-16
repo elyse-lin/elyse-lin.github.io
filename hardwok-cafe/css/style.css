@@ -152,6 +152,7 @@ li a:hover {
 
 .slideshow-container {
     max-width: 80%;
+    margin: auto;
     position: relative;
     grid-column: 2/ span 3;
     grid-row: 2/span 2;
