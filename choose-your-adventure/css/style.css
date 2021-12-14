@@ -13,3 +13,16 @@
         font-size: 30px;
         padding: 8px 16px;
     }
+    
+    .header {
+        text-align: center;
+        font-size: 80px;
+        grid-column: 1/span 4;
+        grid-row: 1;
+    }
+    
+    .image1 {
+        grid-column: 1/span 4;
+        grid-row: 6;
+        position: center;
+    }
