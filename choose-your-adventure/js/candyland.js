@@ -8,12 +8,19 @@ while (gameContinue === "y") {
     let playerChoice = prompt("Which realm do you enter (1 or 2)?");
     //generate random number for realm
 
-    if (playerChoice === evilCandyland) {
-        alert("you enter the evil candyland and fall in the pit of lava. sorry you die!");
-    } else if (playerChoice === "2") {
-        alert("you are lucky and enter the winter wonderland candyland!");
-    } else {
-        alert("sorry that realm does not exist!");
+    if (playerChoice === "1") {
+        let playerAge = Number(prompt("How old are you?"));
+        if (playerAge < 13) {
+            alert("too young");
+        } else if (playerAge >= 14 && playerAge <= 17) {
+            alert("perfect age. ")
+        } else {
+            alert("you enter the evil candyland and fall in the pit of lava. sorry you die!");
+        }
+        if (playerChoice === "2") {
+            alert("you are lucky and enter the winter wonderland candyland!");
+        } else {
+            alert("sorry that realm does not exist!");
+        }
     }
-
 }
