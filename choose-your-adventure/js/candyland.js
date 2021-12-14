@@ -8,5 +8,9 @@ while (gameContinue === "y") {
     let playerChoice = Number(prompt("Which realm do you choose (1 or 2)?"));
     //generate random number for realm
     //random number 1 or 2
+    let evilCandyland = math.floor(math.random() * 2) + 1;
+    let outputMsg = " ";
+    if playerChoice === evilCandyland {
 
+    }
 }
