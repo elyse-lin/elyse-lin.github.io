@@ -11,16 +11,15 @@ while (gameContinue === "y") {
     if (playerChoice === "1") {
         let playerAge = Number(prompt("How old are you?"));
         if (playerAge < 13) {
-            alert("too young");
+            alert("too young. you accidentally walk into the evil candyland and disappear into the chocolate river");
         } else if (playerAge >= 14 && playerAge <= 17) {
-            alert("perfect age. ")
+            alert("rebellious age. you enter the evil candyland and get eaten by a candy monster ")
         } else {
             alert("you enter the evil candyland and fall in the pit of lava. sorry you die!");
         }
-        if (playerChoice === "2") {
-            alert("you are lucky and enter the winter wonderland candyland!");
-        } else {
-            alert("sorry that realm does not exist!");
-        }
+    } else if (playerChoice === "2") {
+        alert("you are lucky and enter the winter wonderland candyland!");
+    } else {
+        alert("sorry that realm does not exist!");
     }
 }
