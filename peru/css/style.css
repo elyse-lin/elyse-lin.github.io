@@ -50,6 +50,12 @@ ul.nav li a:hover {
     font-style: normal;
 }
 
+.font3 {
+    font-family: semplicitapro, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 10% 40% 40% auto;
@@ -58,6 +64,13 @@ ul.nav li a:hover {
 }
 
 .grid-item {
+    text-align: center;
+    font-size: 30px;
+    padding: 8px 16px;
+}
+
+.grid-item2 {
+    background-color: rgb(188, 158, 130);
     text-align: center;
     font-size: 30px;
     padding: 8px 16px;
@@ -73,11 +86,25 @@ ul.nav li a:hover {
     grid-row: 4;
 }
 
+.photo1 {
+    grid-column: 2/span 2;
+    grid-row: 5;
+}
+
+.what {
+    grid-column: 1/span 4;
+    grid-row: 6;
+}
+
 footer {
     text-align: center;
     padding: 3px;
     background-color: rgb(188, 158, 130);
     color: black;
+}
+
+.solid {
+    border-style: solid;
 }
 
 
@@ -203,3 +230,6 @@ footer {
         opacity: 1
     }
 }
+
+
+/* Peru Page Style Starts Here*/
