@@ -76,6 +76,11 @@ ul.nav li a:hover {
     padding: 8px 16px;
 }
 
+.grid-item3 {
+    padding: 8px 16px;
+    font-size: 20px
+}
+
 .navmenu {
     grid-column: 1/span 4;
     grid-row: 2;
@@ -233,3 +238,19 @@ footer {
 
 
 /* Peru Page Style Starts Here*/
+
+.subheader {
+    grid-column: 1/span 4;
+    grid-row: 3;
+    font-size: 60px;
+}
+
+.partnership {
+    grid-column: 1/span 2;
+    grid-row: 4;
+}
+
+.carolimage {
+    grid-column: 3/span 2;
+    grid-row: 4;
+}
