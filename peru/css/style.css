@@ -56,6 +56,13 @@ ul.nav li a:hover {
     font-style: italic;
 }
 
+.font4 {
+    font-family: semplicitapro, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 25px;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 10% 40% 40% auto;
@@ -253,4 +260,54 @@ footer {
 .carolimage {
     grid-column: 3/span 2;
     grid-row: 4;
+}
+
+
+/*Contact CSS starts here*/
+
+.contact-subheader {
+    grid-column: 1/span 4;
+    grid-row: 4;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    grid-column: 1/span 2;
+    grid-row: 5;
 }
