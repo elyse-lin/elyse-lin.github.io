@@ -31,11 +31,14 @@ function sumOfNumbers(p1, p2) {
     return result;
 }
 
-alert("Welcome to Tiktok! Imagine I'm showing you a tiktok video right now");
-let likeCount = Number(prompt("How many likes did this Tiktok video get?"));
-let comment = prompt("What is the most recent comment on this Tiktok video?");
-let shareCount = Number(prompt("How many shares did this Tiktok video get?"));
-let content = prompt("What is being shown in the video? ('dancing/comedy/other')")
+function popup() {
+    alert("Welcome to Tiktok! Imagine I'm showing you a tiktok video right now");
+    let likeCount = Number(prompt("How many likes did this Tiktok video get?"));
+    let comment = prompt("What is the most recent comment on this Tiktok video?");
+    let shareCount = Number(prompt("How many shares did this Tiktok video get?"));
+    let content = prompt("What is being shown in the video? ('dancing/comedy/other')")
+}
+//pop-up
 
 //using the two inputs above, pass that into the magic function and return result
 let rankResult = magicAlgorithm(likeCount, comment);
