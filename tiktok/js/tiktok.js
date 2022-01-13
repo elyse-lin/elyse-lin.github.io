@@ -37,13 +37,28 @@ function popup() {
     let comment = prompt("What is the most recent comment on this Tiktok video?");
     let shareCount = Number(prompt("How many shares did this Tiktok video get?"));
     let content = prompt("What is being shown in the video? ('dancing/comedy/other')")
+
+    //using the two inputs above, pass that into the magic function and return result
+    let rankResult = magicAlgorithm(likeCount, comment);
+    let rankResult2 = magicAlgorithm2(shareCount, content);
+    let resultCombo = sumOfNumbers(rankResult, rankResult2);
+    let resultString = "Based off of the magic algorithm, this video's rank is: " + resultCombo;
+
+    alert(resultString);
 }
 //pop-up
 
-//using the two inputs above, pass that into the magic function and return result
-let rankResult = magicAlgorithm(likeCount, comment);
-let rankResult2 = magicAlgorithm2(shareCount, content);
-let resultCombo = sumOfNumbers(rankResult, rankResult2);
-let resultString = "Based off of the magic algorithm, this video's rank is: " + resultCombo;
+function showUI() {
+    let likeCount = Number(document.getElementById("like-textbox").value);
+    let comment = document.getElementById("comment-textbox").value;
+    let shareCount = Number(document.getElementById("share-textbox").value);
+    let content = document.getElementById("content-textbox").value;
 
-alert(resultString);
+    let rankResult = magicAlgorithm(likeCount, comment);
+    let rankResult2 = magicAlgorithm2(shareCount, content);
+    let resultCombo = sumOfNumbers(rankResult, rankResult2);
+
+    //display the output
+    document.getElementById("result-paragraph").innerHTML = "Tiktok Rank: " + resultCombo;
+
+}
