@@ -63,6 +63,12 @@ ul.nav li a:hover {
     font-size: 25px;
 }
 
+.font5 {
+    font-family: semplicitapro, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 10% 40% 40% auto;
@@ -94,17 +100,12 @@ ul.nav li a:hover {
 
 .mission {
     grid-column: 2/span 2;
-    grid-row: 4;
+    grid-row: 7;
 }
 
 .photo1 {
     grid-column: 2/span 2;
     grid-row: 5;
-}
-
-.what {
-    grid-column: 2/span 2;
-    grid-row: 6;
 }
 
 .container2 {
@@ -124,11 +125,22 @@ footer {
     border-style: solid;
 }
 
+.dotted {
+    border-style: dotted;
+}
+
+.peru-info {
+    text-align: center;
+    grid-column: 2/ span 2;
+    grid-row: 4;
+    font-size: 50px;
+}
+
 
 /*Slideshow CSS begins here*/
 
 .slideshow-container {
-    max-width: 800px;
+    max-width: 1000px;
     position: relative;
     margin: auto;
     grid-column: 2/span 2;
@@ -258,13 +270,30 @@ footer {
 }
 
 .partnership {
-    grid-column: 1/span 2;
-    grid-row: 4;
+    grid-column: 3/span 1;
+    grid-row: 5;
 }
 
 .carolimage {
     grid-column: 3/span 2;
     grid-row: 4;
+}
+
+.what {
+    grid-column: 1/span 4;
+    grid-row: 7;
+}
+
+.general-info {
+    grid-column: 1/span 2;
+    grid-row: 4;
+    text-size-adjust: auto;
+}
+
+.girl2image {
+    grid-column: 1/span 2;
+    grid-row: 5;
+    float: right;
 }
 
 
