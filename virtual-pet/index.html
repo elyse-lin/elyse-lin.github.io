@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body style="height:600px; width: 1000px; border:1px solid black" class="grid-container">
+<body style="height:700px; width: 1000px; border:1px solid black" class="grid-container">
     <div style="text-align: center;" class="grid-item plant-intro">
         <h1>This is Spikey, my cactus plant</h1>
         <p>Water and give it sun to keep the plant alive</p>
         <img src="images/healthy cactus.jpg" alt="Cactus">
+        <p id="pet-condition">Spikey is healthy!</p>
     </div>
 
     <div class="grid-item water-meter">
         <h3>Spikey's water level</h3>
         <meter id="water-meter" min="0" max="10" value="5"></meter>
         <p id="water-paragraph">5</p>
-        <button id="water-button">Water me!</button>
+        <button id="water-button" onclick="waterPlant();">Water me!</button>
 
     </div>
 
@@ -28,17 +29,18 @@
         <h3>Spikey's sunlight level</h3>
         <meter id="sun-meter" min="0" max="10" value="5"></meter>
         <p id="sun-paragraph">5</p>
-        <button id="sun-button">Give me sun!</button>
+        <button id="sun-button" onclick="sunPlant();">Give me sun!</button>
     </div>
 
     <div class="grid-item fertilization-meter">
         <h3>Spikey's fertilization level</h3>
         <meter id="fertilization-meter" min="0" max="5" value="2"></meter>
         <p id="fertilization-paragraph">2</p>
-        <button id="fertilization-button">Give me fertilization!</button>
-        <script src="js/pet.js"></script>
+        <button id="fertilization-button" onclick="fertilePlant();">Give me fertilization!</button>
     </div>
 
+
+    <script src="js/pet.js"></script>
 </body>
 
 
