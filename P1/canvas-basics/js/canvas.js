@@ -11,6 +11,6 @@ for (let counter1 = 10; counter1 >= 1; counter1--) {
     console.log(counter1);
 }
 //count 1-10 only odd numbers
-for (let counter2 = 1; counter2 <= 10; counter2 += 2) {
+for (let counter2 = 1; counter2 <= 11; counter2 += 2) {
     console.log(counter2);
 }
