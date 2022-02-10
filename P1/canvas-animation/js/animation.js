@@ -13,14 +13,27 @@ let playerSpeed = 2;
 let playerXDir = 0;
 let playerYDir = 0;
 
+//ball position and movement
+let ballX = 50;
+let ballY = 100;
+let ballXDir = 2.5;
+let ballYDir = 2;
+let ballRadius = 15;
+
 function drawPlayer() {
     ctx.fillRect(playerX, playerY, 100, 20);
-
 }
 
 function movePlayer() {
     playerX += playerSpeed * playerXDir;
     playerY += playerSpeed * playerYDir;
+
+    //edge check
+    if (playerX < 0) {
+        playerX = 0;
+    } else if (playerX > 500 - 101) {
+        playerX = 500 - 101;
+    }
 }
 
 
@@ -28,6 +41,31 @@ function refreshPlayer() {
     ctx.clearRect(0, 0, 500, 500);
     movePlayer();
     drawPlayer();
+    //animate ball
+    checkBallCollision();
+    moveBall();
+    drawBall();
+}
+
+function drawBall() {
+    ctx.beginPath();
+    ctx.arc(ballX, ballY, ballRadius, 0, 2 * Math.PI);
+    ctx.fill();
+}
+
+function moveBall() {
+    ballY += ballYDir;
+    ballX += ballXDir;
+}
+
+function checkBallCollision() {
+    //check vertical wall
+    if ((ballY > 500 - ballRadius) || (ballY < 0 + ballRadius)) {
+        ballYDir = ballYDir * -1;
+    }
+    if ((ballX > 500 - ballRadius) || (ballX < 0 + ballRadius)) {
+        ballXDir = ballXDir * -1;
+    }
 }
 //when key is pressed
 function keyPressed(event) {
@@ -119,6 +157,6 @@ function rectBounce() {
 }
 
 //setInterval(rectBounce, 10);
-setInterval(refreshPlayer, 30);
+setInterval(refreshPlayer, 10);
 
 //#3 ball bouncing horizontally
