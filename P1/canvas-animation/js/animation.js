@@ -9,7 +9,7 @@ let keyupOutput = document.getElementById("keyup-output");
 //player position and movement
 let playerX = 250;
 let playerY = 250;
-let playerSpeed = 2;
+let playerSpeed = 5;
 let playerXDir = 0;
 let playerYDir = 0;
 const PADDLE_WIDTH = 100;
@@ -65,8 +65,14 @@ function checkBallCollision() {
     if ((ballY > 500 - BALL_RADIUS) || (ballY < 0 + BALL_RADIUS)) {
         ballYDir = ballYDir * -1;
     }
+    //check horizontal wall
     if ((ballX > 500 - BALL_RADIUS) || (ballX < 0 + BALL_RADIUS)) {
         ballXDir = ballXDir * -1;
+    }
+
+    //check if I hit the paddle
+    if (ballX + BALL_RADIUS >= playerX && ballX - BALL_RADIUS <= playerX + PADDLE_WIDTH && ballY + BALL_RADIUS >= playerY && ballY - BALL_RADIUS <= playerY + PADDLE_HEIGHT) {
+        ballYDir = ballYDir * -1;
     }
 }
 //when key is pressed
