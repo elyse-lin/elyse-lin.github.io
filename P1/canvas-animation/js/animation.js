@@ -1,6 +1,7 @@
 //get canvas item
 let myCanvas = document.getElementById("my-canvas");
 let ctx = myCanvas.getContext("2d");
+let character = document.getElementById("character");
 
 //get paragraph items
 let keydownOutput = document.getElementById("keydown-output");
@@ -14,6 +15,10 @@ let playerXDir = 0;
 let playerYDir = 0;
 const PADDLE_WIDTH = 100;
 const PADDLE_HEIGHT = 20;
+
+//image settings
+const IMG_WIDTH = 40;
+const IMG_HEIGHT = 40;
 
 //ball position and movement
 let ballX = 50;
@@ -46,13 +51,18 @@ function refreshPlayer() {
     //animate ball
     checkBallCollision();
     moveBall();
-    drawBall();
+    //drawBall();
+    drawImage();
 }
 
 function drawBall() {
     ctx.beginPath();
     ctx.arc(ballX, ballY, BALL_RADIUS, 0, 2 * Math.PI);
     ctx.fill();
+}
+
+function drawImage() {
+    ctx.drawImage(character, ballX, ballY, IMG_WIDTH, IMG_HEIGHT);
 }
 
 function moveBall() {
@@ -62,16 +72,16 @@ function moveBall() {
 
 function checkBallCollision() {
     //check vertical wall
-    if ((ballY > 500 - BALL_RADIUS) || (ballY < 0 + BALL_RADIUS)) {
+    if ((ballY > 500 - IMG_HEIGHT) || (ballY < 0)) {
         ballYDir = ballYDir * -1;
     }
     //check horizontal wall
-    if ((ballX > 500 - BALL_RADIUS) || (ballX < 0 + BALL_RADIUS)) {
+    if ((ballX > 500 - IMG_WIDTH) || (ballX < 0)) {
         ballXDir = ballXDir * -1;
     }
 
     //check if I hit the paddle
-    if (ballX + BALL_RADIUS >= playerX && ballX - BALL_RADIUS <= playerX + PADDLE_WIDTH && ballY + BALL_RADIUS >= playerY && ballY - BALL_RADIUS <= playerY + PADDLE_HEIGHT) {
+    if (ballX + IMG_WIDTH >= playerX && ballX <= playerX + PADDLE_WIDTH && ballY + IMG_HEIGHT >= playerY && ballY <= playerY + PADDLE_HEIGHT) {
         ballYDir = ballYDir * -1;
     }
 }
