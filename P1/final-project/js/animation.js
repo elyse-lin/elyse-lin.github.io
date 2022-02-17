@@ -5,13 +5,15 @@ let gem1 = document.getElementById("gem1");
 let gem2 = document.getElementById("gem2");
 let gem3 = document.getElementById("gem3");
 let monster = document.getElementById("monster");
+let wave = document.getElementById("wave");
 
-const IMG_WIDTH = 50;
+const IMG_WIDTH = 70;
 const IMG_HEIGHT = 50;
 const GEM_WIDTH = 40;
 const GEM_HEIGHT = 40;
 
 function drawLine() {
+    ctx.lineWidth = 7;
     ctx.beginPath();
     ctx.moveTo(0, 167);
     ctx.lineTo(1000, 167);
@@ -20,6 +22,7 @@ function drawLine() {
 }
 
 function drawLine2() {
+    ctx.lineWidth = 7;
     ctx.beginPath();
     ctx.moveTo(0, 333);
     ctx.lineTo(1000, 333);
@@ -33,6 +36,10 @@ function drawImage() {
     ctx.drawImage(gem2, 450, 280, GEM_WIDTH, GEM_HEIGHT);
     ctx.drawImage(monster, 600, 180, GEM_WIDTH, GEM_HEIGHT);
     ctx.drawImage(gem3, 800, 250, GEM_WIDTH, GEM_HEIGHT);
+    ctx.drawImage(wave, 750, 100, IMG_WIDTH, IMG_HEIGHT);
+    ctx.drawImage(wave, 250, 400, IMG_WIDTH, IMG_HEIGHT);
+    ctx.drawImage(wave, 100, 50, IMG_WIDTH, IMG_HEIGHT);
+
 }
 
 function refreshPlayer() {
