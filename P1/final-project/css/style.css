@@ -1,0 +1,22 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grid-item {
+    text-align: center;
+    font-size: 20px;
+    padding: 8px 16px;
+}
+
+.main {
+    grid-column: 1/span 3;
+    grid-row: 1;
+}
+
+.how-to {
+    grid-column: 1;
+    grid-row: 2;
+}
