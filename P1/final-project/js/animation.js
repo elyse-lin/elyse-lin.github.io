@@ -6,7 +6,11 @@ let gem2 = document.getElementById("gem2");
 let gem3 = document.getElementById("gem3");
 let monster = document.getElementById("monster");
 let wave = document.getElementById("wave");
+let flag = document.getElementById("flag");
 
+let gemexists = true;
+let gemexists2 = true;
+let gemexists3 = true;
 
 let playerX = 0;
 let playerY = 125;
@@ -20,7 +24,16 @@ const IMG_HEIGHT = 50;
 const GEM_WIDTH = 40;
 const GEM_HEIGHT = 40;
 let points = 0;
-let newgem1;
+let gem1X = 250;
+let gem1Y = 60;
+let gem2X = 450;
+let gem2Y = 100;
+let gem3X = 800;
+let gem3Y = 150;
+let monsterX = 600;
+let monsterY = 175;
+let monsterXdir = 1.5;
+let monsterYdir = 1.5;
 
 let keydownOutput = document.getElementById("keydown-output");
 let keyupOutput = document.getElementById("keyup-output");
@@ -45,14 +58,11 @@ function drawLine2() {
 }
 
 function drawImage() {
-    newgem1 = ctx.drawImage(gem1, 250, 50, GEM_WIDTH, GEM_HEIGHT);
-    ctx.drawImage(gem2, 450, 100, GEM_WIDTH, GEM_HEIGHT);
-    ctx.drawImage(monster, 600, 180, GEM_WIDTH, GEM_HEIGHT);
-    ctx.drawImage(gem3, 800, 150, GEM_WIDTH, GEM_HEIGHT);
-    //ctx.drawImage(wave, 750, 100, IMG_WIDTH, IMG_HEIGHT);
-    //ctx.drawImage(wave, 250, 400, IMG_WIDTH, IMG_HEIGHT);
-    //ctx.drawImage(wave, 100, 50, IMG_WIDTH, IMG_HEIGHT);
-
+    ctx.drawImage(gem1, gem1X, gem1Y, GEM_WIDTH, GEM_HEIGHT);
+    ctx.drawImage(gem2, gem2X, gem2Y, GEM_WIDTH, GEM_HEIGHT);
+    ctx.drawImage(monster, monsterX, monsterY, GEM_WIDTH, GEM_HEIGHT);
+    ctx.drawImage(gem3, gem3X, gem3Y, GEM_WIDTH, GEM_HEIGHT);
+    ctx.drawImage(flag, 925, 50, 100, 200);
 }
 
 function drawPlayer() {
@@ -71,6 +81,11 @@ function movePlayer() {
     }
 }
 
+function moveMonster() {
+    monsterY += monsterYdir;
+    monsterX += monsterXdir;
+}
+
 function checkSwimmerCollision() {
     //check vertical wall
     if (playerY > 250 - SWIMMER_HEIGHT) {
@@ -84,12 +99,64 @@ function checkSwimmerCollision() {
     } else if (playerX < 0) {
         playerX = 0;
     }
+    //monster bounce
+    if ((monsterY > 250 - GEM_HEIGHT) || (monsterY < 50)) {
+        monsterYdir = monsterYdir * -1;
+    }
+    //check horizontal wall
+    if ((monsterX > 1000 - GEM_WIDTH) || (monsterX < 0)) {
+        monsterXdir = monsterXdir * -1;
+    }
 
     // gem and monster collision
-    if (newgem1 + GEM_WIDTH >= playerX && newgem1 <= playerX + SWIMMER_WIDTH && newgem1 + GEM_HEIGHT >= playerY && playerY <= newgem1 + GEM_HEIGHT) {
-        newgem1.style.display = 'none';
-        points += 1;
+    if (gem1X + GEM_WIDTH >= playerX && gem1X <= playerX + SWIMMER_WIDTH && gem1Y + GEM_HEIGHT >= playerY && playerY <= gem1Y + GEM_HEIGHT) {
+        ctx.clearRect(gem1X, gem1Y, GEM_WIDTH, GEM_HEIGHT);
+        if (gemexists === true) {
+            points += 1;
+        }
+        gemexists = false;
     }
+    if (gem2X + GEM_WIDTH >= playerX && gem2X <= playerX + SWIMMER_WIDTH && gem2Y + GEM_HEIGHT >= playerY && playerY <= gem2Y + GEM_HEIGHT) {
+        ctx.clearRect(gem2X, gem2Y, GEM_WIDTH, GEM_HEIGHT);
+        if (gemexists2 === true) {
+            points += 1;
+        }
+        gemexists2 = false;
+    }
+    if (gem3X + GEM_WIDTH >= playerX && gem3X <= playerX + SWIMMER_WIDTH && gem3Y + GEM_HEIGHT >= playerY && playerY <= gem3Y + GEM_HEIGHT) {
+        ctx.clearRect(gem3X, gem3Y, GEM_WIDTH, GEM_HEIGHT);
+        if (gemexists3 === true) {
+            points += 1;
+        }
+        gemexists3 = false;
+    }
+    if (monsterX + GEM_WIDTH >= playerX && monsterX <= playerX + GEM_WIDTH && playerY + SWIMMER_HEIGHT >= monsterY && playerY <= monsterY + GEM_HEIGHT) {
+        alert("sorry, your swimmer was eaten by the sea monster. please refresh the page to start again!")
+
+    }
+    if (playerX >= 920 && points === 1) {
+        alert("your swimmer made it to the finish line, but only got one point and got last place :(. refresh the page to play again!")
+        return;
+    } else if (playerX >= 920 && points === 2) {
+        alert("your swimmer made it to the finish line, but only got two points and got 2nd place. refresh the page to play again!")
+        return;
+    } else if (playerX >= 920 && points === 3) {
+        alert("your swimmer made it to the finish line, and got the most points. they are the winner! refresh the page to play again!")
+        return;
+    }
+}
+
+function clearGems() {
+    if (gemexists === false) {
+        ctx.clearRect(gem1X, gem1Y, GEM_WIDTH, GEM_HEIGHT);
+    }
+    if (gemexists2 === false) {
+        ctx.clearRect(gem2X, gem2Y, GEM_WIDTH, GEM_HEIGHT);
+    }
+    if (gemexists3 === false) {
+        ctx.clearRect(gem3X, gem3Y, GEM_WIDTH, GEM_HEIGHT);
+    }
+
 }
 
 function keyReleased(event) {
@@ -97,9 +164,7 @@ function keyReleased(event) {
     let key = event.keyCode;
     keyupOutput.innerHTML = "key right code: " + key;
 
-    if (key === 65) {
-        playerXDir = 0;
-    } else if (key === 68) {
+    if (key === 68) {
         playerXDir = 0;
     }
     if (key === 87) {
@@ -115,9 +180,8 @@ function keyPressed(event) {
     keydownOutput.innerHTML = "key left code: " + key;
 
     //move player
-    if (key === 65) {
-        playerXDir = playerXDir - 1;
-    } else if (key === 68) {
+
+    if (key === 68) {
         playerXDir = playerXDir + 1;
     }
     if (key === 87) {
@@ -137,9 +201,11 @@ function refreshPlayer() {
     drawLine();
     drawLine2();
     movePlayer();
+    moveMonster();
     drawPlayer();
     checkSwimmerCollision();
     pointsDisplay();
+    clearGems();
 }
 
 setInterval(refreshPlayer, 10);
