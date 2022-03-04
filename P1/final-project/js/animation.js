@@ -13,7 +13,7 @@ let gemexists2 = true;
 let gemexists3 = true;
 let isAlive = true;
 
-let timer = 10;
+let timer = 15;
 let playerX = 0;
 let playerY = 125;
 let playerSpeed = 2;
@@ -187,7 +187,7 @@ function keyReleased(event) {
     } else if (key === 88) {
         playerYDir = 0;
     }
-    if (isAlive === false) {
+    while (isAlive === false) {
         return;
     }
 }
@@ -231,7 +231,7 @@ setInterval(refreshPlayer, 10);
 setInterval(function decrease() {
     if (timer > 0) {
         timer -= 1;
-        if (isAlive === false) {
+        while (isAlive === false) {
             return;
         }
     }
