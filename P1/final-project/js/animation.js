@@ -11,7 +11,9 @@ let flag = document.getElementById("flag");
 let gemexists = true;
 let gemexists2 = true;
 let gemexists3 = true;
+let isAlive = true;
 
+let timer = 10;
 let playerX = 0;
 let playerY = 125;
 let playerSpeed = 2;
@@ -38,6 +40,14 @@ let monsterYdir = 1.5;
 let keydownOutput = document.getElementById("keydown-output");
 let keyupOutput = document.getElementById("keyup-output");
 let playerPoints = document.getElementById("points");
+
+function refreshUI() {
+    let timerMeter = document.getElementById("timer")
+    timerMeter.value = timer;
+    let timerParagraph = document.getElementById("timer-paragraph");
+    timerParagraph.innerHTML = timer;
+
+}
 
 function drawLine() {
     ctx.lineWidth = 7;
@@ -132,18 +142,23 @@ function checkSwimmerCollision() {
     }
     if (monsterX + GEM_WIDTH >= playerX && monsterX <= playerX + GEM_WIDTH && playerY + SWIMMER_HEIGHT >= monsterY && playerY <= monsterY + GEM_HEIGHT) {
         alert("sorry, your swimmer was eaten by the sea monster. please refresh the page to start again!")
-
+        isAlive = false;
     }
     if (playerX >= 920 && points === 1) {
         alert("your swimmer made it to the finish line, but only got one point and got last place :(. refresh the page to play again!")
-        return;
+        isAlive = false;
     } else if (playerX >= 920 && points === 2) {
         alert("your swimmer made it to the finish line, but only got two points and got 2nd place. refresh the page to play again!")
-        return;
+        isAlive = false;
     } else if (playerX >= 920 && points === 3) {
         alert("your swimmer made it to the finish line, and got the most points. they are the winner! refresh the page to play again!")
-        return;
+        isAlive = false;
     }
+    if (timer === 0) {
+        alert("sorry, your swimmer ran out of time and automatically disqualified in the race. please refresh the page to start again!")
+        isAlive = false;
+    }
+
 }
 
 function clearGems() {
@@ -172,6 +187,9 @@ function keyReleased(event) {
     } else if (key === 88) {
         playerYDir = 0;
     }
+    if (isAlive === false) {
+        return;
+    }
 }
 
 function keyPressed(event) {
@@ -197,6 +215,7 @@ function pointsDisplay() {
 
 function refreshPlayer() {
     ctx.clearRect(0, 0, 1000, 300);
+    refreshUI();
     drawImage();
     drawLine();
     drawLine2();
@@ -209,3 +228,12 @@ function refreshPlayer() {
 }
 
 setInterval(refreshPlayer, 10);
+setInterval(function decrease() {
+    if (timer > 0) {
+        timer -= 1;
+        if (isAlive === false) {
+            return;
+        }
+    }
+    refreshUI();
+}, 1000)
