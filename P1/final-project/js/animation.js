@@ -141,22 +141,37 @@ function checkSwimmerCollision() {
         gemexists3 = false;
     }
     if (monsterX + GEM_WIDTH >= playerX && monsterX <= playerX + GEM_WIDTH && playerY + SWIMMER_HEIGHT >= monsterY && playerY <= monsterY + GEM_HEIGHT) {
-        alert("sorry, your swimmer was eaten by the sea monster. please refresh the page to start again!")
+        if (isAlive) {
+            alert("sorry, your swimmer was eaten by the sea monster. please refresh the page to start again!")
+        }
         isAlive = false;
+        clearInterval(myInterval);
     }
     if (playerX >= 920 && points === 1) {
-        alert("your swimmer made it to the finish line, but only got one point and got last place :(. refresh the page to play again!")
+        if (isAlive) {
+            alert("your swimmer made it to the finish line, but only got one point and got last place :(. refresh the page to play again!")
+        }
         isAlive = false;
+        clearInterval(myInterval);
     } else if (playerX >= 920 && points === 2) {
-        alert("your swimmer made it to the finish line, but only got two points and got 2nd place. refresh the page to play again!")
+        if (isAlive) {
+            alert("your swimmer made it to the finish line, but only got two points and got 2nd place. refresh the page to play again!")
+        }
         isAlive = false;
+        clearInterval(myInterval);
     } else if (playerX >= 920 && points === 3) {
-        alert("your swimmer made it to the finish line, and got the most points. they are the winner! refresh the page to play again!")
+        if (isAlive) {
+            alert("your swimmer made it to the finish line, and got the most points. they are the winner! refresh the page to play again!")
+        }
         isAlive = false;
+        clearInterval(myInterval);
     }
     if (timer === 0) {
-        alert("sorry, your swimmer ran out of time and automatically disqualified in the race. please refresh the page to start again!")
+        if (isAlive) {
+            alert("sorry, your swimmer ran out of time and automatically disqualified in the race. please refresh the page to start again!")
+        }
         isAlive = false;
+        clearInterval(myInterval);
     }
 
 }
@@ -226,8 +241,7 @@ function refreshPlayer() {
     pointsDisplay();
     clearGems();
 }
-
-setInterval(refreshPlayer, 10);
+var myInterval = setInterval(refreshPlayer, 10);
 setInterval(function decrease() {
     if (timer > 0) {
         timer -= 1;
